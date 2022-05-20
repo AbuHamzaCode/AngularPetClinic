@@ -1,0 +1,77 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentPet.id">
+    <h4>Pet</h4>
+    <div>
+      <label><strong>Name:</strong></label>
+      {{ currentPet.name }}
+    </div>
+    <div>
+      <label><strong>Breed:</strong></label>
+      {{ currentPet.breed }}
+    </div>
+    <div>
+      <label><small>Gender:</small></label>
+      {{ currentPet.gender }}
+    </div>
+    <div>
+      <label><small>Age:</small></label>
+      {{ currentPet.age }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentPet.description }}
+    </div>
+
+    <a class="badge badge-warning" routerLink="/pets/{{ currentPet.id }}">
+      Edit
+    </a>
+  </div>
+
+  <div *ngIf="!currentPet">
+    <br />
+    <p>Please click on a Pet...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentPet.id" class="edit-form">
+    <h4>Pet</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="currentPet.name" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="breed">Breed</label>
+        <input type="text" class="form-control" id="breed" [(ngModel)]="currentPet.breed" name="breed" />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" id="gender" [(ngModel)]="currentPet.gender" name="gender" />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" [(ngModel)]="currentPet.age" name="age" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="currentPet.description"
+          name="description" />
+      </div>
+    </form>
+
+    <button class="badge badge-danger mr-2" (click)="deletePet()">
+      Delete
+    </button>
+
+    <button type="submit" class="badge badge-success mb-2" (click)="updatePet()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentPet.id">
+    <br />
+    <p>Cannot access this Pet...</p>
+  </div>
+</ng-template>

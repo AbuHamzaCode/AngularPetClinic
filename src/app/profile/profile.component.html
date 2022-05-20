@@ -1,0 +1,25 @@
+
+<div class="_body">
+  <div class="infocardContainer">
+
+    <div id="main">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Dog_coat_variation.png">
+    </div>
+
+    <div id="textbois">
+      <h2>{{ currentUser.fullName }}</h2>
+      <br/>
+      <p>{{ currentUser.address }}</p>
+      <br/>
+      <p>{{ currentUser.phone }}</p>
+      <br/>
+      <a href="mailto:${currentUser.email}">{{ currentUser.email }}</a>
+
+      <div id="hotlinks">
+          <button routerLink="/pets">Pet list</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
