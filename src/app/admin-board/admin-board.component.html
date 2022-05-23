@@ -38,6 +38,7 @@
       <th>Gender</th>
       <th>Age</th>
       <th>Description</th>
+      <th>Owner</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -49,6 +50,7 @@
       <td>{{ pet.gender }}</td>
       <td>{{ pet.age }}</td>
       <td>{{ pet.description }}</td>
+      <td>{{ pet.ownerName }}</td>
       <td>
         <button type="button" (click)="deletePet(pet.id)">Delete</button>
       </td>
