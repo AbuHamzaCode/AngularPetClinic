@@ -16,7 +16,7 @@ export class PetDetailsComponent implements OnInit {
     name: '',
     breed: '',
     gender: '',
-    age: 0,
+    age: '',
     description: ''
   };
 

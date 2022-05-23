@@ -12,12 +12,11 @@ export class AddPetComponent implements OnInit {
     name: '',
     breed: '',
     gender: '',
-    age: 0,
+    age: '',
     description: ''
   };
 
   submitted = false;
-  tokenStorageService: any;
 
   constructor(private userService: UserService) {}
 
@@ -47,7 +46,7 @@ export class AddPetComponent implements OnInit {
       name: '',
       breed: '',
       gender: '',
-      age: 0,
+      age: '',
       description: ''
     };
   }
