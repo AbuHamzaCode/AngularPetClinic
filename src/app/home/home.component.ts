@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   content?: string;
   constructor(private userService: UserService) { }
   ngOnInit(): void {
-
   }
 
 }

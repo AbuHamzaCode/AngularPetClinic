@@ -1,0 +1,38 @@
+
+.card-card-container {
+  margin: auto;
+  width: 950px;
+  height: 500px;
+  background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+
+label {
+  color: aliceblue;
+  display: inline;
+}
+
+.form-group {
+  width: 400px;
+  margin-left: 50px;
+  display: inline-block;
+}
+
+h1 {
+  margin-left: 42%;
+  margin-top: 10px;
+  color: aliceblue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.form-class{
+  margin-top: 10px;
+}
+
+#button-register {
+  margin-top: 40px;
+  background-color: black;
+  border-style: none;
+  margin: 50px 55%;
+}

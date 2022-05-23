@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pet } from '../models/pet.model';
@@ -22,11 +22,13 @@ export class AdminService {
   }
 
   deleteOwner(id: any): Observable<any> {
-    return this.http.delete('${API_URL}owner/${id}');
+    let queryParams = new HttpParams().append('id', id);
+    return this.http.delete(API_URL + 'owner/', { params: queryParams });
   }
 
   deletePet(id: any): Observable<any> {
-    return this.http.delete('${API_URL}pet/${id}');
+    let queryParams = new HttpParams().append('id', id);
+    return this.http.delete(API_URL + 'pet/', { params: queryParams });
   }
 
 }

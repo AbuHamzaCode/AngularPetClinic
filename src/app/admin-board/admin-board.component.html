@@ -1,0 +1,58 @@
+
+<table class="table">
+  <h1>Owner List</h1>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Full Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userArray">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.fullName }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button type="button" (click)="deleteOwner(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+<table class="table">
+  <h1>Pet List</h1>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Breed</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pet of petArray">
+      <td>{{ pet.id }}</td>
+      <td>{{ pet.breed }}</td>
+      <td>{{ pet.name }}</td>
+      <td>{{ pet.gender }}</td>
+      <td>{{ pet.age }}</td>
+      <td>{{ pet.description }}</td>
+      <td>
+        <button type="button" (click)="deletePet(pet.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

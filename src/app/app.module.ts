@@ -12,6 +12,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { PetDetailsComponent } from './pet-details/pet-details.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminBoardComponent } from './admin-board/admin-board.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { AddPetComponent } from './add-pet/add-pet.component';
     PetListComponent,
     PetDetailsComponent,
     AddPetComponent,
+    RegisterComponent,
+    AdminBoardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

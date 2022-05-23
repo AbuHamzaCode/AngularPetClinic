@@ -1,38 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-// ------------------------login vars--------------------------//
-  form_login: any = {
+  form: any = {
     username: null,
-    password: null
+    password: null,
   };
 
   isLoggedIn = false;
   isLoginFailed = false;
-  errorMessageLogin = '';
+  errorMessage = '';
   roles: string[] = [];
-// ------------------------signup vars--------------------------//
-  form_signup: any = {
-    username: null,
-    email: null,
-    password: null,
-    fullName: null,
-    address: null,
-    phone: null
-  }
-  isSuccessful = false;
-  isSignUpFailed = false;
-  errorMessageSignup = '';
-
-
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  locatedAdminBoard = false;
+  constructor(
+    private authService: AuthService,
+    private tokenStorage: TokenStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -41,42 +32,29 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmitLogin(): void {
-    const { username, password } = this.form_login;
+  onSubmit(): void {
+    const { username, password } = this.form;
     this.authService.login(username, password).subscribe({
-      next: data => {
-        this.tokenStorage.saveToken(data.accessToken);
+      next: (data) => {
+        this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
       },
-      error: err => {
-        this.errorMessageLogin = err.error.message;
+      error: (err) => {
+        this.errorMessage = err.error.message;
         this.isLoginFailed = true;
-      }
+      },
     });
   }
   reloadPage(): void {
-    window.location.reload();
-  }
-
-
-  onSubmitSignup(): void {
-    const { username, email, password, fullName, address, phone } = this.form_signup;
-
-    this.authService.register(username, email, password, fullName, address, phone).subscribe({
-
-      next: data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      error: err => {
-        this.errorMessageSignup = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    });
+    this.locatedAdminBoard = this.roles.includes('ROLE_ADMIN');
+    if (this.locatedAdminBoard) {
+      window.location.href = '/admin';
+      return;
+    }
+    window.location.href = '/profile';
   }
 }

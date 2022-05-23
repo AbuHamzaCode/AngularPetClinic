@@ -1,0 +1,35 @@
+.card-card-container {
+width: 900px;
+margin-top: 50px;
+display: inline-flex;
+
+}
+.img-first {
+  max-width: 500px;
+  display: inline-block;
+  max-height: 1000px;
+  border-radius: 10px;
+  box-shadow: 5px 20px 50px #000;
+}
+
+.card-card-container p {
+  color: aliceblue;
+  margin-left: 20px;
+}
+
+.card-card-container:nth-child(2) p {
+  padding-right: 10px;
+}
+
+.contacts {
+  color: #ffffff;
+  display: inline-block;
+  margin-right: 50px;
+}
+a {
+  margin: auto;
+}
+
+.col-md-12 {
+  margin-bottom: 50px;
+}

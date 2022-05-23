@@ -16,7 +16,7 @@ export class PetDetailsComponent implements OnInit {
     name: '',
     breed: '',
     gender: '',
-    age: '',
+    age: 0,
     description: ''
   };
 
@@ -35,8 +35,8 @@ export class PetDetailsComponent implements OnInit {
     }
   }
 
-  getPet(name: string): void {
-    this.userService.get(name)
+  getPet(id: any): void {
+    this.userService.get(id)
       .subscribe({
         next: (data) => {
           this.currentPet = data;
@@ -55,6 +55,7 @@ export class PetDetailsComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'This pet was updated successfully!';
+          this.router.navigate(['/pets']);
         },
         error: (e) => console.error(e)
       });

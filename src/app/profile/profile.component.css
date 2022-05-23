@@ -1,24 +1,17 @@
 /*TODO: clean it all up, finish flex, add aesthetics, icons, redefine to be relative to vh-vw, maybe rework v2 variant using scss and frames and real transitions? */
-._body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Jost', sans-serif;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-}
 
 .infocardContainer * {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 300;
 }
-h2 {
+h2, strong {
+  margin-top: 30px;
   font-weight: 600; font-style: italic; font-family: "Fira Sans Condensed", sans-serif;
+
 }
 
 a {
+  margin-top: 40px;
   text-decoration: none;
 }
 a:visited {
@@ -97,7 +90,7 @@ a:hover {
   position: relative;
 }
 .infocardContainer #textbois #hotlinks {
-  max-width: 60%;
+  max-width: 50%;
   max-height: 30px;
 
   --background-color: white;
@@ -109,7 +102,7 @@ a:hover {
 }
 .infocardContainer #textbois #hotlinks * {
   background-color: rgb(0, 0, 0);
-  max-width: 90px;
+  max-width: 70px;
   color: #ffffff;
   --margin: 0 1px 0 1px;
   border-radius: 25px;

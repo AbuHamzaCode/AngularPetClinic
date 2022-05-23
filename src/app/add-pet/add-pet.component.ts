@@ -12,7 +12,7 @@ export class AddPetComponent implements OnInit {
     name: '',
     breed: '',
     gender: '',
-    age: '',
+    age: 0,
     description: ''
   };
 
@@ -26,9 +26,9 @@ export class AddPetComponent implements OnInit {
   savePet(): void {
     const data = {
       name: this.pet.name,
-      breed: this.pet.name,
-      gender: this.pet.name,
-      age: this.pet.name,
+      breed: this.pet.breed,
+      gender: this.pet.gender,
+      age: this.pet.age,
       description: this.pet.description
     };
 
@@ -47,13 +47,9 @@ export class AddPetComponent implements OnInit {
       name: '',
       breed: '',
       gender: '',
-      age: '',
+      age: 0,
       description: ''
     };
   }
 
-  logout(): void {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
 }

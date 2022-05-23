@@ -5,4 +5,5 @@ export class Pet {
   gender?: string;
   age?: any;
   description?: string;
+  ownerId?: any;
 }

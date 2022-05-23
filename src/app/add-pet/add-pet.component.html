@@ -1,61 +1,32 @@
-<div class="body">
-  <div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="#" class="navbar-brand">Pet clinic</a>
-      <ul class="navbar-nav mr-auto" routerLinkActive="active">
-        <li class="nav-item">
-          <a routerLink="/pets" class="nav-link">Pet List</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/add" class="nav-link">Add</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/profile" class="nav-link">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/home" class="nav-link">Home</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a href class="nav-link" (click)="logout()" routerLink="/login">LogOut</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
 
-
-  <div>
-    <div class="submit-form">
-      <div *ngIf="!submitted">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" required [(ngModel)]="pet.name" name="name" />
-        </div>
-        <div class="form-group">
-          <label for="breed">Breed</label>
-          <input type="text" class="form-control" id="breed" required [(ngModel)]="pet.breed" name="breed" />
-        </div>
-        <div class="form-group">
-          <label for="gender">Gender</label>
-          <input type="text" class="form-control" id="gender" required [(ngModel)]="pet.gender" name="gender" />
-        </div>
-        <div class="form-group">
-          <label for="age">Age</label>
-          <input type="text" class="form-control" id="age" required [(ngModel)]="pet.age" name="age" />
-        </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <input class="form-control" id="description" required [(ngModel)]="pet.description" name="description" />
-        </div>
-
-        <button (click)="savePet()" class="btn btn-success">Submit</button>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="pet.name" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="breed">Breed</label>
+        <input type="text" class="form-control" id="breed" required [(ngModel)]="pet.breed" name="breed" />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="text" class="form-control" id="gender" required [(ngModel)]="pet.gender" name="gender" />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" required [(ngModel)]="pet.age" name="age" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input class="form-control" id="description" required [(ngModel)]="pet.description" name="description" />
       </div>
 
-      <div *ngIf="submitted">
-        <h4>Pet was submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newPet()">Add</button>
-      </div>
+      <button (click)="savePet()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Pet was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newPet()">Add</button>
     </div>
   </div>
-</div>

@@ -1,5 +1,7 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Pet } from '../models/pet.model';
+import { TokenStorageService } from '../_services/token-storage.service';
 import { UserService } from '../_services/user.service';
 
 @Component({
@@ -13,7 +15,6 @@ export class PetListComponent implements OnInit {
   currentPet: Pet = {};
   currentIndex = -1;
   name = '';
-  tokenStorageService: any;
 
   constructor(private userService: UserService) { }
 
@@ -57,7 +58,7 @@ export class PetListComponent implements OnInit {
   searchName(): void {
     this.currentPet = {};
     this.currentIndex = -1;
-    this.userService.get(this.name)
+    this.userService.getByName(this.name)
       .subscribe({
         next: (data) => {
           this.currentPet = data;
@@ -67,8 +68,4 @@ export class PetListComponent implements OnInit {
       });
   }
 
-  logout(): void {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
 }

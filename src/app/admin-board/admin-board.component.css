@@ -1,0 +1,10 @@
+.table {
+  color: aliceblue;
+  margin-top: 100px;
+  display: inline-block;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid white;
+}

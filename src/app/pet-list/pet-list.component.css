@@ -13,6 +13,11 @@
   margin: 100px 300px;
 }
 
+.col-md-8, .col-md-6 {
+  display: inline-block;
+}
+
 h4 {
   color: white;
 }
+
