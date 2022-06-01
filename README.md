@@ -1,4 +1,4 @@
-# AngularVeterinatian
+# AngularPetClinic
 
 ## Description
 
