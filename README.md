@@ -1,6 +1,16 @@
 # AngularVeterinatian
 
+## Description
+
+Frontend-demo for pet clinic project. Demo version is work on VM, so you can check functional this application to follow this [link](http://petclinic-angular-app.s3-website.eu-west-3.amazonaws.com).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+
+## Technologies
+* Angular 13
+* TypeScript
+* HTML
+* CSS
+* RXJS
 
 ## Development server
 
